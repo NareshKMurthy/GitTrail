@@ -33,13 +33,13 @@ import com.relevantcodes.extentreports.LogStatus;
 public class Utility {
 	
 	
-	public static String getFormatedDateTime(){
+	public static String getFormatedDateTime1(){
 		SimpleDateFormat simpleDate = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 		return simpleDate.format(new Date());
 	}
 	
 	public static String getScreenShot(WebDriver driver, String imageFolderPath){
-		String imagePath=imageFolderPath+"/"+getFormatedDateTime()+".png";
+		String imagePath=imageFolderPath+"/"+getFormatedDateTime1()+".png";
 		TakesScreenshot page=(TakesScreenshot) driver;
 		try{
 			FileUtils.copyFile(page.getScreenshotAs(OutputType.FILE), new File(imagePath));
@@ -51,7 +51,7 @@ public class Utility {
 	}
 	
 	public static String getScreenShot(String imageFolderPath){
-		String imagePath=imageFolderPath+"/"+getFormatedDateTime()+".png";
+		String imagePath=imageFolderPath+"/"+getFormatedDateTime1()+".png";
 		
 		try{
 			Dimension desktopSize=Toolkit.getDefaultToolkit().getScreenSize();
